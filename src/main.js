@@ -6,5 +6,12 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 导入全局样式
 import './styles/index.scss'
+// 导入svgicon
+import installIcons from '@/icons'
 
-createApp(App).use(store).use(router).use(ElementPlus).mount('#app')
+const app = createApp(App)
+
+/* 全局注册SvgIcon组件 */
+installIcons(app)
+
+app.use(store).use(router).use(ElementPlus).mount('#app')
