@@ -8,7 +8,7 @@
   ></div>
   <!-- 内部图标 -->
   <svg v-else class="svg-icon" :class="calssName" aria-hidden="true">
-    <use :xink:href="iconName" />
+    <use :xlink:href="iconName" />
   </svg>
 </template>
 
