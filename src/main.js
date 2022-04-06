@@ -10,7 +10,6 @@ import './styles/index.scss'
 import installIcons from '@/icons'
 
 const app = createApp(App)
-
 /* 全局注册SvgIcon组件 */
 installIcons(app)
 

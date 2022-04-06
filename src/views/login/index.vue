@@ -52,6 +52,7 @@
 import { ref } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
+import router from '@/router'
 const loginForm = ref({
   username: 'super-admin',
   password: '123456'
@@ -88,7 +89,7 @@ const loading = ref(false)
 const loginFormRef = ref(null)
 const store = useStore()
 const handleLogin = () => {
-  loginFormRef.value.validate((valid) => {
+  loginFormRef.value.validate(valid => {
     if (!valid) return
     loading.value = true
     store
@@ -96,8 +97,9 @@ const handleLogin = () => {
       .then(() => {
         loading.value = false
         /* TODO:登录后操作 */
+        router.push('/')
       })
-      .catch((err) => {
+      .catch(err => {
         loading.value = false
         console.log(err)
       })

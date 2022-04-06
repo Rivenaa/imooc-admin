@@ -1,22 +1,31 @@
 import { login } from '@/api/index'
 import md5 from 'md5'
+import { getItem, setItem } from '@/utils/storage'
 
 export default {
   namespaced: true,
-  state: () => ({}),
-  mutations: {},
+  state: () => ({
+    token: getItem('token') || ''
+  }),
+  mutations: {
+    setToken(state, token) {
+      state.token = token
+      setItem('token', token)
+    }
+  },
   actions: {
     login(context, userInfo) {
-      const { usernmae, password } = userInfo
+      const { username, password } = userInfo
       return new Promise((resolve, reject) => {
         login({
-          usernmae,
+          username,
           password: md5(password)
         })
-          .then((data) => {
+          .then(data => {
+            context.commit('setToken', data.token)
             resolve()
           })
-          .catch((err) => {
+          .catch(err => {
             reject(err)
           })
       })
