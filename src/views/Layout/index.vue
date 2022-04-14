@@ -2,14 +2,14 @@
   <div class="app-wrapper">
     <!-- 左侧的menu -->
     <sidebar id="guide-siderbar" class="sidebar-container" />
-  </div>
-  <div class="main-container">
-    <!-- 顶部的navbar -->
-    <div class="fixed-header">
-      <navbar />
+    <div class="main-container">
+      <!-- 顶部的navbar -->
+      <div class="fixed-header">
+        <navbar />
+      </div>
+      <!-- 内容区 -->
+      <app-main />
     </div>
-    <!-- 内容区 -->
-    <app-main />
   </div>
 </template>
 
