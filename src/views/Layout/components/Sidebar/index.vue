@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Sidebar</h1>
-    <sidebar-menu></sidebar-menu>
+    <el-scrollbar>
+      <sidebar-menu></sidebar-menu>
+    </el-scrollbar>
   </div>
 </template>
 

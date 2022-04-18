@@ -15,8 +15,9 @@ service.interceptors.request.use(
     if (store.state.user.token) {
       config.headers.Authorization = `Bearer ${store.state.user.token}`
       /* token超时 */
-      if (isCheckTimeout) {
+      if (isCheckTimeout()) {
         store.dispatch('user/logout')
+        return Promise.reject(new Error('token失效'))
       }
     }
     return config

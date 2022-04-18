@@ -4,9 +4,9 @@ import SvgIcon from '@/components/SvgIcon'
 const svgRequire = require.context('./svg', false, /\.svg$/)
 
 /* 完成本地svg的导入 */
-svgRequire.keys().forEach((svgIcon) => svgRequire(svgIcon))
+svgRequire.keys().forEach(svgIcon => svgRequire(svgIcon))
 
 /* 全局注册组件 */
-export default (app) => {
+export default app => {
   app.component('svg-icon', SvgIcon)
 }

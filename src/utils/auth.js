@@ -14,6 +14,6 @@ export function setTimeStamp() {
 /* 是否超时 */
 export function isCheckTimeout() {
   const currentTime = Date.now()
-  const timeStamp = this.getTimeStamp()
+  const timeStamp = getTimeStamp()
   return currentTime - timeStamp > TOKEN_TIME_OUT_VALUE
 }

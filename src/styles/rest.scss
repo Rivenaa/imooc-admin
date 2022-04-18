@@ -50,8 +50,8 @@
  /* custom */
  a {
    color: #7e8c8d;
-   backface-visibility: hidden;
    -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
    text-decoration: none;
  }
  
@@ -59,7 +59,3 @@
    list-style: none;
  }
  
- body {
-   -webkit-text-size-adjust: none;
-   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
- }
